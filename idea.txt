@@ -1,0 +1,51 @@
+Datbase Content:
+  - Board games database
+     ~ Board Game ID's
+     ~ Board Game Name
+     ~ Board Game Serial Number
+     ~ Board Game Cost
+     ~ Board Game Quantity
+     ~ Board Game Type
+     ~ Board Game Manufacturer
+     ~ Board Game Number of Players
+
+  - Player Info
+    ~ Player ID
+    ~ Player Name
+    ~ Player Address
+    ~ Player Age
+    ~ Player Gender
+    ~ Player Wins
+    ~ Player Losses
+
+  - Judge Info
+    ~ Judge ID
+    ~ Judge Name
+    ~ Judge Address
+    ~ Judge Age
+    ~ Judge Gender
+    ~ Judge Num_Games_Judged
+    ~ Judge Games Qualified to Judge
+
+  - Addresses
+    ~ Adress ID
+    ~ Adress Location
+
+  - Tournaments
+    ~ Tournament ID
+    ~ Tournament Name
+    ~ Tournament Date
+    ~ Tournament Game ID
+    ~ Tournament Number of Participants
+    ~ Tournament Number of Spectators
+    ~ Tournament Prize Amount
+    ~ Tournament 1st place Player ID
+    ~ Tournament 2nd place Player ID
+    ~ Tournament 3rd place Player ID
+
+Web Interface: 
+  Link for each query
+  Display basic information (3 most popular board games)
+  Display info for each displayed board game
+  Display latest tournament
+  Display latest tournament winners
