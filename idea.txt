@@ -2,17 +2,41 @@ Datbase Content:
   - Board games database
      ~ Board Game ID's
      ~ Board Game Name
-     ~ Board Game Serial Number
      ~ Board Game Cost
      ~ Board Game Quantity
      ~ Board Game Type
      ~ Board Game Manufacturer
      ~ Board Game Number of Players
+     
+  -Events
+    ~Event ID
+    ~Event Type
+    ~Event Name
+    ~Event Number of Participants
+    ~Event Number of Sales
+    ~Event Participant IDs
+     
+     -Store Record
+      ~Serial Number
+      ~Product Name
+      ~Product Type
+      ~Product Price
+      ~Product Status (Sold or In Stock)
+      ~Purchaser-Name
+      
+      -Purchaser Accounts
+      ~ID
+      ~UserName
+      ~Password
+      ~Name
+      ~Address
+      ~ZipCode
 
   - Player Info
     ~ Player ID
     ~ Player Name
     ~ Player Address
+    ~ Player Zipcode
     ~ Player Age
     ~ Player Gender
     ~ Player Wins
