@@ -25,8 +25,15 @@ Datbase Content:
     ~Vendor Phone Number
     ~Vendor Email
     
-     
-     -Store Record
+  -Purchases From Vendor
+    ~Product Serial Number
+    ~Product Name
+    ~Product Type
+    ~Store Location
+    ~Vendor Name
+    ~Date
+  
+  -Store Record
       ~Serial Number
       ~Product Name
       ~Product Vendor
@@ -62,9 +69,13 @@ Datbase Content:
     ~ Judge Num_Games_Judged
     ~ Judge Games Qualified to Judge
 
-  - Addresses
-    ~ Adress ID
-    ~ Adress Location
+  - Store
+    ~Store ID
+    ~Store Name
+    ~Store Address
+    ~Store City
+    ~Store State
+    ~Store Zipcode 
 
   - Tournaments
     ~ Tournament ID
