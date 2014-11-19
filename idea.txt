@@ -4,7 +4,7 @@ Datbase Content:
      ~ Board Game Name
      ~ Board Game Cost
      ~ Board Game Quantity
-     ~ Board Game Type
+     ~ Board Game Color
      ~ Board Game Vendor
      ~ Board Game Number of Players
      
@@ -29,6 +29,7 @@ Datbase Content:
     ~Product Serial Number
     ~Product Name
     ~Product Type
+    ~Product Color
     ~Store Location
     ~Vendor Name
     ~Date
@@ -64,10 +65,9 @@ Datbase Content:
     ~ Judge ID
     ~ Judge Name
     ~ Judge Address
+    ~ Judge Zipcode
     ~ Judge Age
-    ~ Judge Gender
     ~ Judge Num_Games_Judged
-    ~ Judge Games Qualified to Judge
 
   - Store
     ~Store ID
@@ -80,10 +80,11 @@ Datbase Content:
   - Tournaments
     ~ Tournament ID
     ~ Tournament Name
-    ~ Tournament Date
+    ~ Tournament Day
+    ~ Tournament Month
+    ~ Tournatment Year
     ~ Tournament Game ID
     ~ Tournament Number of Participants
-    ~ Tournament Number of Spectators
     ~ Tournament Prize Amount
     ~ Tournament 1st place Player ID
     ~ Tournament 2nd place Player ID
