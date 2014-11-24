@@ -2,7 +2,7 @@ Queries
 
 //Create Tables
 
-/Vendor
+/Vendors 
 
 CREATE TABLE Vendor( id TINYINT NOT NULL AUTO_INCREMENT, name CHAR(30), address CHAR(50), status CHAR(6), phone_number CHAR(12), email CHAR(30), PRIMARY KEY (id));
 
@@ -14,25 +14,85 @@ CREATE TABLE Vendor_Zip_Code( vendor_id TINYINT NOT NULL, zipcode CHAR(5), PRIMA
 
 INSERT INTO Vendor_Zip_Code(vendor_id, zipcode) VALUES (1, 87043), (2, 78760), (3, 60076), (4, 10026), (5, 06051), (6, 97201); 
 
+/Purchaser Accounts
+
 CREATE TABLE Accounts (id MEDIUMINT NOT NULL AUTO_INCREMENT, username CHAR(50), password CHAR(50), name CHAR(50), address CHAR(50), PRIMARY KEY (id) );
 
 INSERT INTO Accounts (username, password, name, address) VALUES ('Angus5979','x978ooplmn', 'Angus Beef', '4945 E. Haven Ct. Denver, CO'), ('MAD7986', 'lmorp17764', 'Madison Brooks', '4995 Glenwood Ave. Newport Beach, CA'), ('Dam90097', 'por334544e', 'Damien Ranulf', '905 Bulwark Place Bose, ID'), ('flower9578', 'ffmgn7849', 'Rose Tyler', '45754'), ('Pounder8686', 'xskfefne898', 'Jesse Boykins', '4643 Topaz Ave, Tampa Bay, FL');
+
+/Purchaser Account Zipcodes
 
 CREATE TABLE Account_Zipcode( account_id TINYINT NOT NULL, zipcode CHAR(5));
 
 INSERT INTO Account_Zipcode(account_id, zipcode) VALUES (1, 80067), (2, 92660), (3, 83701), (4, 10026), (5, 33626); 
 
+/Players
+
 CREATE TABLE Player(id MEDIUMINT NOT NULL AUTO_INCREMENT, name CHAR(50), address CHAR(50), age TINYINT, gender CHAR(1), wins TINYINT, losses TINYINT, PRIMARY KEY (id));
 
 INSERT INTO Player (name, address, age, wins, losses) VALUES ('James Norton', '5675 Jeppeson Ave. New Orleans, LA', 34, 8 , 4), ('Mary Veneer', '67950 Candlestick Way Bose, ID', 29, 4, 1), ('Lindsay Greene', '8964 Sourghum Way Billings, MT', 36, 8, 9), ('David Blaine', '2374 Great White Ave. Santa Fe, NM', 44, 2, 11), ('Jesse James', '3890 Camela Ave Austin, TX', 31, 4, 6), ('Georgia OKeefe', '9384 El Paso Ave Santa Fe, NM', 54, 17, 5);
 
+/Player Zipcodes
+
 CREATE TABLE Player_Address(player_id int, zipcode int);
 
-INSERT
+INSERT INTO Player_Address Values (1, 70112), (2, 83701), (3, 59010), (4, 87501), (5, 73301), (6, 87501);
+
+/Judges
+
+CREATE TABLE Judge (id TINYINT NOT NULL AUTO_INCREMENT, name CHAR(50), address CHAR(50), age TINYINT, number_of_games_judged TINYINT, Primary KEY (id) );
+
+INSERT INTO Judge (name, address, age, number_of_games_judged) VALUES ('John Boehner', '5589 Crystalpeak Dr. Boulder, CO', 35, 15), ('Kelly Jameson', '3465 Mount Meeker Street Gunbarrell, CO', 38, 25), ('Jeremy Rockson', '48450 E. Bonham Ave. San Bernadino, CA', 45, 35), ('Krystal Venera', '3493 Ferguson Street Portland, OR', 36, 9), ('Wesley Sanders', '7748 Banana Street Tama Bay, FL', 44, 23), ('Emily Desanders', '3892 Cherry Ave Denver, CO', 50, 45);
+
+/Judges Zipcode
+
+CREATE TABLE Judge_Zipcode(judge_id int, zipcode int);
+
+INSERT INTO Judge_Zipcode VALUES (1, 80303), (2, 80503), (3, 92401), (4, 97201), (5, 33565), (6, 80123);
+
+/Store
+
+CREATE TABLE Store(id MEDIUMINT NOT NULL AUTO_INCREMENT, name CHAR(30), address CHAR(30), PRIMARY KEY (id));
+
+INSERT INTO Store (name, address) VALUES ('Locness Games', '3456 Wilberfore Way'), ('GameTribe', '3903 Totem Drive'), ('Benny Games', '2232 Gunnison Court'), ('Friendly Games', '2334 Benson Ave'), ('Jimmy Joe Games', '4540 Candyland Lane'), ('Castle Games', '1234 Townsend Lane');
+
+/Store City
+
+CREATE TABLE Store_City (store_id int, city CHAR(30));
+
+INSERT INTO Store_City VALUES (1, 'Boulder'), (2, 'Boulder'), (3, 'San Bernadino'), (4, 'Tampa Bay'), (5, 'Boise'), (6, 'Billings');
+
+/Store State
+
+CREATE TABLE Store_State (store_id int, state CHAR(2));
+
+INSERT INTO Store_State VALUES (1, 'CO'), (2, 'CO'), (3, 'CA'), (4, 'FL'), (5, 'ID'), (6, 'MT');
+
+/Store Zipcode
+
+CREATE TABLE Store_Zipcode (store_id int, zipcode int);
+
+INSERT INTO Store_Zipcode VALUES (1, 80303), (2, 80303), (3, 92401), (4, 33565), (5, 83701), (6, 59101);
+
+/Board Games
+
+CREATE TABLE Board_Games(id MEDIUMINT NOT NULL AUTO_INCREMENT, name CHAR(30), cost DOUBLE, quantity int, vendor_id int , number_of_players int, PRIMARY KEY (id));
+
+INSERT INTO Board_Games (name, cost, quantity, vendor_id, number_of_players) VALUES ('Dominion', 35.00, 10, 1, 6), ('Munchkin', 20.00, 4, 2, 6), ('Agricola', 45.00, 2, 3, 4), ('Slapper', 13.00, 10, 5, 5), ('Goosehunter', 26.00, 9, 6, 6), ('Settlers of Catan', 48.00, 1, 3, 4);
+
+Board Game Color
+
+CREATE TABLE Board_Game_Edition (board_game_id int, edition char(20));
+
+INSERT INTO Board_Game_Edition VALUES (1, 'Normal'), (4, 'Gold'), (3, 'Diamond'), (1, 'Seaside'), (2, 'Normal'), (2, 'Adeventure Time');
 
 //Test Querries
 
 /Implied Join
 SELECT V.name, V.address, Z.zipcode FROM Vendor V, Vendor_Zip_Code Z WHERE Z.vendor_id = V.id; 
+
+SELECT * FROM Board_Games WHERE number_of_players >= 6;
+
+
 
 
