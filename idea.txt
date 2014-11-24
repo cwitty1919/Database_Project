@@ -133,7 +133,7 @@ Datbase Content:
     ~Store Location
     ~Vendor Name
     ~Date
-
+  
   -Store Record
       ~Serial Number
       ~Product Name
@@ -204,6 +204,8 @@ Datbase Content:
     ~ Tournament 3rd place Player ID
  
 
+
+
    Normalized Schema (4NF):
 
 Datbase Content:
@@ -243,7 +245,6 @@ Datbase Content:
     ~Product Serial Number
     ~Product Name
     ~Product Type
-    ~Product Color
     ~Store Location
     ~Vendor Name
     ~Date

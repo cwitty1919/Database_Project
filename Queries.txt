@@ -1,0 +1,38 @@
+Queries
+
+//Create Tables
+
+/Vendor
+
+CREATE TABLE Vendor( id TINYINT NOT NULL AUTO_INCREMENT, name CHAR(30), address CHAR(50), status CHAR(6), phone_number CHAR(12), email CHAR(30), PRIMARY KEY (id));
+
+INSERT INTO Vendor (name, address, status, phone_number, email) VALUES ('Rio Grande Games', 'PO Box 1033, Placitas, NM', 'OPEN', '101-110-1010', 'info@riograndegames.com'), ('Steve Jackson Games','3735 Promontory Point Drive Austin, TX', 'OPEN', '512-447-7866','info@sjgames.com'),('Mayfair Games', '8060 St. Louis Ave. Skokie, IL', 'OPEN', '847-677-6655', 'retailer@mayfairgames.com'), ('Z-Man Games', '10258 Corporate Circle Manhattan, NY', 'OPEN', '450-424-0655', 'info@zmangames.com'), ('Gibman Games', '1797 E. Minotaur Dr. Newhaven, CT', 'CLOSED', '109-221-9597', 'info@gibmangames.com'), ('AppleSnapple Games', '2945 Cider Dr. Portland, OR', 'CLOSED', '145-995-9977', 'info@applesnapplegames.com');
+
+/Vendor Zipcode
+
+CREATE TABLE Vendor_Zip_Code( vendor_id TINYINT NOT NULL, zipcode CHAR(5), PRIMARY KEY (vendor_id), FOREIGN KEY (vendor_id) REFERENCES Vendor (id));
+
+INSERT INTO Vendor_Zip_Code(vendor_id, zipcode) VALUES (1, 87043), (2, 78760), (3, 60076), (4, 10026), (5, 06051), (6, 97201); 
+
+CREATE TABLE Accounts (id MEDIUMINT NOT NULL AUTO_INCREMENT, username CHAR(50), password CHAR(50), name CHAR(50), address CHAR(50), PRIMARY KEY (id) );
+
+INSERT INTO Accounts (username, password, name, address) VALUES ('Angus5979','x978ooplmn', 'Angus Beef', '4945 E. Haven Ct. Denver, CO'), ('MAD7986', 'lmorp17764', 'Madison Brooks', '4995 Glenwood Ave. Newport Beach, CA'), ('Dam90097', 'por334544e', 'Damien Ranulf', '905 Bulwark Place Bose, ID'), ('flower9578', 'ffmgn7849', 'Rose Tyler', '45754'), ('Pounder8686', 'xskfefne898', 'Jesse Boykins', '4643 Topaz Ave, Tampa Bay, FL');
+
+CREATE TABLE Account_Zipcode( account_id TINYINT NOT NULL, zipcode CHAR(5));
+
+INSERT INTO Account_Zipcode(account_id, zipcode) VALUES (1, 80067), (2, 92660), (3, 83701), (4, 10026), (5, 33626); 
+
+CREATE TABLE Player(id MEDIUMINT NOT NULL AUTO_INCREMENT, name CHAR(50), address CHAR(50), age TINYINT, gender CHAR(1), wins TINYINT, losses TINYINT, PRIMARY KEY (id));
+
+INSERT INTO Player (name, address, age, wins, losses) VALUES ('James Norton', '5675 Jeppeson Ave. New Orleans, LA', 34, 8 , 4), ('Mary Veneer', '67950 Candlestick Way Bose, ID', 29, 4, 1), ('Lindsay Greene', '8964 Sourghum Way Billings, MT', 36, 8, 9), ('David Blaine', '2374 Great White Ave. Santa Fe, NM', 44, 2, 11), ('Jesse James', '3890 Camela Ave Austin, TX', 31, 4, 6), ('Georgia OKeefe', '9384 El Paso Ave Santa Fe, NM', 54, 17, 5);
+
+CREATE TABLE Player_Address(player_id int, zipcode int);
+
+INSERT
+
+//Test Querries
+
+/Implied Join
+SELECT V.name, V.address, Z.zipcode FROM Vendor V, Vendor_Zip_Code Z WHERE Z.vendor_id = V.id; 
+
+
