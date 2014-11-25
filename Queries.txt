@@ -104,15 +104,19 @@ CREATE TABLE Tournament(id INT NOT NULL AUTO_INCREMENT, name CHAR(30), date DATE
 
 INSERT INTO Tournament(name, date, store_id, board_game_id, number_of_participants, prize_amount, winner_id, judge_id) VALUES ('Last Munchkin Standing', '2010-04-15', 1, 2, 16, 25.00, 2, 1), ('Slap Attack!', '2010-06-21', 5, 4, 8, 12.00, 2, 2), ("Farmer's Apocalypse", '2010-10-10', 6, 3, 50.00, 32, 5, 3);
 
-/Events
-
-CREATE TABLE Event(id int NOT NULL AUTO_INCREMENT, type CHAR(10), name CHAR(30), date DATE, number_of_participants int, number_of_sales int;
-
 //Test Querries
 
 /Select From Where
 
 SELECT * FROM Board_Games WHERE number_of_players >= 6;
+
+/Select From Where Order By
+
+SELECT T.name as Tournament, S.name as Store, T.number_of_participants  FROM Tournament T, Store S WHERE T.store_id = S.id ORDER BY prize_amount;
+
+SELECT FROM WHERE ORDER BY LIMIT
+
+Select B.name, B.cost, V.name From Board_Games B, Vendor V Where B.vendor_id = V.id ORDER BY B.cost LIMIT 1;
 
 /Implied Join
 
