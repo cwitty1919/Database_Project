@@ -80,18 +80,45 @@ CREATE TABLE Board_Games(id MEDIUMINT NOT NULL AUTO_INCREMENT, name CHAR(30), co
 
 INSERT INTO Board_Games (name, cost, quantity, vendor_id, number_of_players) VALUES ('Dominion', 35.00, 10, 1, 6), ('Munchkin', 20.00, 4, 2, 6), ('Agricola', 45.00, 2, 3, 4), ('Slapper', 13.00, 10, 5, 5), ('Goosehunter', 26.00, 9, 6, 6), ('Settlers of Catan', 48.00, 1, 3, 4);
 
-Board Game Color
+Board Game Editions
 
-CREATE TABLE Board_Game_Edition (board_game_id int, edition char(20));
+CREATE TABLE Product_Edition (serial_number int, edition char(20));
 
-INSERT INTO Board_Game_Edition VALUES (1, 'Normal'), (4, 'Gold'), (3, 'Diamond'), (1, 'Seaside'), (2, 'Normal'), (2, 'Adeventure Time');
+INSERT INTO Product_Edition VALUES (1, 'Normal'), (4, 'Gold'), (3, 'Diamond'), (1, 'Seaside'), (2, 'Normal'), (2, 'Adeventure Time');
+
+/Shipment Record
+
+CREATE TABLE Purchase_Record(serial_number int NOT NULL AUTO_INCREMENT, board_game_id int, store_id int, date DATE, PRIMARY KEY (serial_number) );
+
+INSERT INTO Purchase_Record(board_game_id, store_id, date) VALUES (1, 1, '2010-10-02'), (2, 2, '2010-11-01'), (3, 3, '2010-03-05'), (4, 4, '2010-05-04'), (5, 5, '2010-06-09'), (6, 6, '2010-02-24');
+
+/Sales Record
+
+CREATE TABLE Sales_Record(serial_number int, store_id int,  board_game_id int, date DATE, purchaser_name CHAR(50));
+
+INSERT INTO Sales_Record(serial_number, board_game_id, store_id, date, purchaser_name) VALUES (1, 1, 1, '2010-12-02', "Madison Brown"), (2, 2, 2, '2010-11-01',"Damien Ranulf"), (4, 3, 3, '2010-03-05', "Madison Brooks"), (5, 4, 4, '2010-05-04', "Larry King");
+
+/Tournaments
+
+CREATE TABLE Tournament(id INT NOT NULL AUTO_INCREMENT, name CHAR(30), date DATE, store_id int, board_game_id int, number_of_participants int, prize_amount DOUBLE, winner_id int, judge_id int, PRIMARY KEY (id));
+
+INSERT INTO Tournament(name, date, store_id, board_game_id, number_of_participants, prize_amount, winner_id, judge_id) VALUES ('Last Munchkin Standing', '2010-04-15', 1, 2, 16, 25.00, 2, 1), ('Slap Attack!', '2010-06-21', 5, 4, 8, 12.00, 2, 2), ("Farmer's Apocalypse", '2010-10-10', 6, 3, 50.00, 32, 5, 3);
+
+/Events
+
+CREATE TABLE Event(id int NOT NULL AUTO_INCREMENT, type CHAR(10), name CHAR(30), date DATE, number_of_participants int, number_of_sales int;
 
 //Test Querries
 
-/Implied Join
-SELECT V.name, V.address, Z.zipcode FROM Vendor V, Vendor_Zip_Code Z WHERE Z.vendor_id = V.id; 
+/Select From Where
 
 SELECT * FROM Board_Games WHERE number_of_players >= 6;
+
+/Implied Join
+
+SELECT V.name, V.address, Z.zipcode FROM Vendor V, Vendor_Zip_Code Z WHERE Z.vendor_id = V.id; 
+
+
 
 
 
