@@ -130,7 +130,15 @@ SELECT V.name, B.name, B.number_of_players FROM Vendor V, Board_games B WHERE B.
 
 SELECT V.name, B.name, B.number_of_players FROM Vendor V, Board_games B WHERE B.vendor_id = V.id GROUP BY B.number_of_players HAVING number_of_players > 4; 
 
+//Create User
 
+CREATE USER 'christopher'@'localhost' IDENTIFIED BY 'password';
+
+GRANT ALL ON project.* TO 'christopher'@'localhost';
+
+//Drop User
+
+DROP USER 'christopher'@'localhost';
 
 
 
