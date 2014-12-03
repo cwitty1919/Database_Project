@@ -122,6 +122,14 @@ Select B.name, B.cost, V.name From Board_Games B, Vendor V Where B.vendor_id = V
 
 SELECT V.name, V.address, Z.zipcode FROM Vendor V, Vendor_Zip_Code Z WHERE Z.vendor_id = V.id; 
 
+/Group By Clause
+
+SELECT V.name, B.name, B.number_of_players FROM Vendor V, Board_games B WHERE B.vendor_id = V.id GROUP BY B.number_of_players; 
+
+/Group By Having Clause
+
+SELECT V.name, B.name, B.number_of_players FROM Vendor V, Board_games B WHERE B.vendor_id = V.id GROUP BY B.number_of_players HAVING number_of_players > 4; 
+
 
 
 

@@ -1,0 +1,107 @@
+Normalized Schema (4NF):
+
+Datbase Content:
+   
+ * -Vendors
+    ~Vendor ID
+    ~Vendor Name
+    ~Vendor Address
+    ~Vendor Status
+    ~Vendor Phone Number
+    ~Vendor Email
+
+    *-Vendor Address
+      ~Vendor Address
+      ~Vendor Zipcode
+
+      -*Purchaser Accounts
+      ~ID
+      ~UserName
+      ~Password
+      ~Name
+      ~Address
+   
+     -*Account_Zipcode
+      Address
+      ZipCode
+
+  - *Player Info
+    ~ Player ID
+    ~ Player Name
+    ~ Player Address
+    ~ Player Age
+    ~ Player Gender
+    ~ Player Wins
+    ~ Player Losses
+
+  -*Player Address
+    ~Player Address
+    ~Player Zipcode
+
+  - *Judge Info
+    ~ Judge ID
+    ~ Judge Name
+    ~ Judge Address
+    ~ Judge Age
+    ~ Judge Num_Games_Judged
+
+  *Judge Address
+    ~Judge Address
+    ~Judge Zipcode
+
+ * Store
+    ~Store ID
+    ~Store Name
+    ~Store Address
+
+    *-Store City 
+      ~Store Address
+      ~Store City
+
+    *Store State
+      ~Store City
+      ~Store State
+
+    *Store Zipcode
+      ~Store Address
+      ~Store Zipcode
+
+  * Board games database
+     ~ Board Game ID's
+     ~ Board Game Name
+     ~ Board Game Cost
+     ~ Board Game Quantity
+     ~ Board Game Vendor
+     ~ Board Game Number of Players
+
+   *-Board game edition 
+      ~Board Game ID
+      ~Board Game edition
+    
+  *Purchases From Vendor
+    ~Product Serial Number
+    ~Board_Game_ID
+    ~Store ID
+    ~Date
+
+  *Purchases from Vendor based on color
+    ~Product Serial Number
+    ~Product Color
+  
+  *Store Record
+      ~Serial Number
+      ~Board_Game_Id
+      ~Store_ID
+      ~Date
+      ~Purchaser-Name
+      
+  *Tournaments
+    ~ Tournament ID
+    ~ Tournament Name
+    ~ Tournament Date
+    ~ Tournament Game ID
+    ~ Tournament Number of Participants
+    ~ Tournament Prize Amount
+    ~ Tournament 1st place Player ID
+    ~Judge_ID
+ 
