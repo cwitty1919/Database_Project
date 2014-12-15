@@ -130,6 +130,11 @@ SELECT V.name, B.name, B.number_of_players FROM Vendor V, Board_games B WHERE B.
 
 SELECT V.name, B.name, B.number_of_players FROM Vendor V, Board_games B WHERE B.vendor_id = V.id GROUP BY B.number_of_players HAVING number_of_players > 4; 
 
+//SELECT WHERE NOT IN: Find all customers who do not have accounts with the store
+
+SELECT S.purchaser_name FROM Sales_Record S WHERE S.purchaser_name NOT IN (SELECT Accounts.name FROM Accounts);
+
+
 //Create User
 
 CREATE USER 'christopher'@'localhost' IDENTIFIED BY 'password';
