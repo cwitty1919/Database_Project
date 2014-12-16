@@ -46,14 +46,8 @@
   	
         <!-- main area -->
         <div class="col-xs-12 col-sm-9" data-spy="scroll" data-target="#sidebar-nav">
-          <h1 id="section1">Datbase Project</h1>
-          <p>This is the database project created by Michael Asnes and Chris Wittenberg.</p>
-    
-          
-    
-          <h1 id="section2">Attributions</h1>
-          <p>This website was built with the Bootstrap darkside theme</p>
-    
+          <h1 id="section1">Database Project</h1>
+          <?php include 'initdb_instructions.php'; ?>
         </div><!-- /.col-xs-12 main -->
     </div><!--/.row-->
   </div><!--/.container-->
