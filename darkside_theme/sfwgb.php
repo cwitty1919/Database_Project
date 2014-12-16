@@ -46,7 +46,7 @@
           <h1 id="section1">Database Project</h1>
             <?php
             include_once 'execute_and_print_query.php';
-            $query = "SELECT V.name, B.name, B.number_of_players FROM Vendor V, Board_games B WHERE B.vendor_id = V.id GROUP BY B.number_of_players;";
+            $query = "SELECT V.name, B.name, B.number_of_players FROM Vendor V, Board_Games B WHERE B.vendor_id = V.id GROUP BY B.number_of_players;";
             execute_and_print_query($query, $conn);
             ?>
         </div><!-- /.col-xs-12 main -->
