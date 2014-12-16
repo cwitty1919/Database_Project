@@ -1,5 +1,5 @@
 <?php
-include 'dblogin.php';
+include 'src/dblogin.php';
 
 $dropdb = "DROP DATABASE IF EXISTS $dbname;";
 if ($conn->query($dropdb) !== TRUE) {

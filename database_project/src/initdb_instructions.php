@@ -1,7 +1,7 @@
 <?php
 
-include 'dblogin.php';
-include './execute_query.php';
+include 'src/dblogin.php';
+include 'src/execute_query.php';
 
 $dropdb = "DROP DATABASE IF EXISTS $dbname;";
 execute_query($dropdb, $conn);
