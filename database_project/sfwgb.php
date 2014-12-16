@@ -44,8 +44,9 @@
         <!-- main area -->
         <div class="col-xs-12 col-sm-9" data-spy="scroll" data-target="#sidebar-nav">
           <h1 id="section1">Database Project</h1>
+          <h2>SELECT FROM WHERE GROUP BY</h2>
             <?php
-            include_once 'execute_and_print_query.php';
+            include_once 'src/execute_query.php';
             $query = "SELECT V.name, B.name, B.number_of_players FROM Vendor V, Board_Games B WHERE B.vendor_id = V.id GROUP BY B.number_of_players;";
             execute_and_print_query($query, $conn);
             ?>

@@ -44,9 +44,10 @@
         <!-- main area -->
         <div class="col-xs-12 col-sm-9" data-spy="scroll" data-target="#sidebar-nav">
           <h1 id="section1">Database Project</h1>
+         <h2>Drop User</h2>
             <?php
-            include_once 'execute_query_as_root.php';
-            $query = "DROP USER 'christopher'@'localhost';";
+            include_once 'src/execute_query.php';
+            $query = "";
             execute_query($query, $conn);
             ?>
         </div><!-- /.col-xs-12 main -->

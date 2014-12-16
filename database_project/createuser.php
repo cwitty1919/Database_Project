@@ -44,8 +44,9 @@
         <!-- main area -->
         <div class="col-xs-12 col-sm-9" data-spy="scroll" data-target="#sidebar-nav">
           <h1 id="section1">Database Project</h1>
+           <h2>Create User</h2>
             <?php
-            include_once 'execute_query_as_root.php';
+            include_once 'src/execute_query_as_root.php';
             $query = "CREATE USER 'christopher'@'localhost' IDENTIFIED BY 'password';";
             execute_query($query, $conn);
             $query = "GRANT ALL ON project.* TO 'christopher'@'localhost';";

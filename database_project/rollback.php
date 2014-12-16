@@ -44,9 +44,9 @@
         <!-- main area -->
         <div class="col-xs-12 col-sm-9" data-spy="scroll" data-target="#sidebar-nav">
           <h1 id="section1">Database Project</h1>
+         <h2>Start Transaction then Rollback</h2>
             <?php
-            include_once 'execute_and_print_query.php';
-            include_once 'execute_query.php';
+            include_once 'src/execute_query.php';
             $query = "START TRANSACTION;";
             execute_query($query, $conn);
             $query = "INSERT INTO Sales_Record(board_game_id, store_id, date, purchaser_name) VALUES (1, 1, '2016-11-11', 'James Baxter');";

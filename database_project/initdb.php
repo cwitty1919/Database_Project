@@ -44,7 +44,8 @@
         <!-- main area -->
         <div class="col-xs-12 col-sm-9" data-spy="scroll" data-target="#sidebar-nav">
           <h1 id="section1">Database Project</h1>
-          <?php include 'initdb_instructions.php'; ?>
+         <h2>Initialize the Database</h2>
+          <?php include 'src/initdb_instructions.php'; ?>
         </div><!-- /.col-xs-12 main -->
     </div><!--/.row-->
   </div><!--/.container-->
