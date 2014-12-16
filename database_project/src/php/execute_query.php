@@ -15,7 +15,7 @@ function execute_query($to_execute, $conn) {
 
    $result = $conn->query($query);
 
-   if ($result ==- FALSE)
+   if ($result === FALSE)
       die("Error executing the sql query");
 
 }
