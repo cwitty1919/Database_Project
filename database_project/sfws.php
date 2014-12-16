@@ -44,7 +44,7 @@
         <!-- main area -->
         <div class="col-xs-12 col-sm-9" data-spy="scroll" data-target="#sidebar-nav">
           <h1 id="section1">Database Project</h1>
-          <h2>SET</h2>
+          <h3>SET</h3>
             <?php
             include_once 'src/execute_query.php';
             $query = "SET @budget = 30.00;";

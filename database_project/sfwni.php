@@ -44,7 +44,7 @@
         <!-- main area -->
         <div class="col-xs-12 col-sm-9" data-spy="scroll" data-target="#sidebar-nav">
           <h1 id="section1">Database Project</h1>
-          <h2>SELECT FROM WHERE NOT IN</h2>
+          <h3>SELECT FROM WHERE NOT IN</h3>
             <?php
             include_once 'src/execute_query.php';
             $query = "SELECT S.purchaser_name FROM Sales_Record S WHERE S.purchaser_name NOT IN (SELECT Accounts.name FROM Accounts);";

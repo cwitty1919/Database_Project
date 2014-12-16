@@ -44,7 +44,7 @@
         <!-- main area -->
         <div class="col-xs-12 col-sm-9" data-spy="scroll" data-target="#sidebar-nav">
           <h1 id="section1">Database Project</h1>
-          <h2>SELECT FROM WHERE with implied join</h2>
+          <h3>SELECT FROM WHERE with implied join</h3>
             <?php
             include_once 'src/execute_query.php';
             $query = "SELECT V.name, V.address, Z.zipcode FROM Vendor V, Vendor_Zip_Code Z WHERE Z.vendor_id = V.id;";

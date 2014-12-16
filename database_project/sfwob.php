@@ -44,7 +44,7 @@
         <!-- main area -->
         <div class="col-xs-12 col-sm-9" data-spy="scroll" data-target="#sidebar-nav">
           <h1 id="section1">Database Project</h1>
-          <h2>SELECT FROM WHERE ORDER BY</h2>
+          <h3>SELECT FROM WHERE ORDER BY</h3>
             <?php
             include_once 'src/execute_query.php';
             $query = "SELECT T.name as Tournament, S.name as Store, T.number_of_participants  FROM Tournament T, Store S WHERE T.store_id = S.id ORDER BY prize_amount;";
