@@ -2,15 +2,6 @@
 
 include 'dblogin.php';
 
-$dbname = project;
-
-$conn = new mysqli($servername, $username, $password);
-
-if($conn->connect_error) {
-    die("Error: Failed to connect to the database <br>");
-}
-
-
 $dropdb = "DROP DATABASE IF EXISTS $dbname;";
 if ($conn->query($dropdb) !== TRUE) {
     $deathstring = "Error dropping database: $conn->error <br>";
