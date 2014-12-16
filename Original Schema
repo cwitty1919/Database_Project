@@ -1,16 +1,16 @@
 Original Schema:
 
 Datbase Content:
-  - Board games database
-     ~ Board Game ID's
-     ~ Board Game Name
-     ~ Board Game Cost
-     ~ Board Game Quantity
-     ~ Board Game Color
-     ~ Board Game Vendor
-     ~ Board Game Number of Players
+  *-Board_Games
+    ~Board Game ID's
+    ~Board Game Name
+    ~Board Game Cost
+    ~Board Game Quantity
+    ~Board Game Color
+    ~Board Game Vendor
+    ~Board Game Number of Players
      
-  -Events
+  *-Events
     ~Event ID
     ~Event Type
     ~Event Name
@@ -18,7 +18,7 @@ Datbase Content:
     ~Event Number of Sales
     ~Event Participant IDs
     
-    -Vendors
+  *-Vendors
     ~Vendor ID
     ~Vendor Name
     ~Vendor Address
@@ -27,7 +27,7 @@ Datbase Content:
     ~Vendor Phone Number
     ~Vendor Email
     
-  -Purchases From Vendor
+  *-Purchases From Vendor
     ~Product Serial Number
     ~Product Name
     ~Product Type
@@ -36,24 +36,24 @@ Datbase Content:
     ~Vendor Name
     ~Date
   
-  -Store Record
-      ~Serial Number
-      ~Product Name
-      ~Product Vendor
-      ~Product Type
-      ~Product Price
-      ~Product Status (Sold or In Stock)
-      ~Purchaser-Name
+  *-Store Record
+    ~Serial Number
+    ~Product Name
+    ~Product Vendor
+    ~Product Type
+    ~Product Price
+    ~Product Status (Sold or In Stock)
+    ~Purchaser-Name
       
-      -Purchaser Accounts
-      ~ID
-      ~UserName
-      ~Password
-      ~Name
-      ~Address
-      ~ZipCode
+  *-Purchaser Accounts
+    ~ID
+    ~UserName
+    ~Password
+    ~Name
+    ~Address
+    ~ZipCode
 
-  - Player Info
+  *-Player Info
     ~ Player ID
     ~ Player Name
     ~ Player Address
@@ -63,7 +63,7 @@ Datbase Content:
     ~ Player Wins
     ~ Player Losses
 
-  - Judge Info
+  *-Judge Info
     ~ Judge ID
     ~ Judge Name
     ~ Judge Address
@@ -71,7 +71,7 @@ Datbase Content:
     ~ Judge Age
     ~ Judge Num_Games_Judged
 
-  - Store
+  *-Store
     ~Store ID
     ~Store Name
     ~Store Address
@@ -79,7 +79,7 @@ Datbase Content:
     ~Store State
     ~Store Zipcode 
 
-  - Tournaments
+  *-Tournaments
     ~ Tournament ID
     ~ Tournament Name
     ~ Tournament Date
