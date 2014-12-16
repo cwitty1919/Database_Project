@@ -3,8 +3,8 @@ include_once 'dblogin.php';
 
 function print_query($query) {
    while ($row = $query->fetch_assoc()) {
-      echo $row;
       print_r($row);
+      echo "<br>";
    }
 }
 
