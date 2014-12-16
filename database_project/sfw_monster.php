@@ -46,7 +46,7 @@
           <h1 id="section1">Database Project</h1>
           <h3>SELECT FROM WHERE with joins, MAX, AVG, 2 levels of parenthesis (and more!)</h3>
             <?php
-            include_once 'src/execute_query.php';
+            include_once 'src/php/execute_query.php';
             $query = "SELECT MAX(B.cost) as MAX_PRICE, AVG(B.cost) as AVG_PRICE FROM Board_Games B WHERE B.id IN (SELECT S.board_game_id FROM Sales_Record S WHERE S.date > 2010 AND S.board_game_id NOT IN (SELECT B.id FROM Board_Games B, Vendor V WHERE B.vendor_id = V.id AND (V.status = 'CLOSED' OR B.cost > 40.00))); ";
             execute_and_print_query($query, $conn);
             ?>

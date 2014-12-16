@@ -46,7 +46,7 @@
           <h1 id="section1">Database Project</h1>
           <h3>SELECT FROM WHERE ORDER BY LIMIT</h3>
             <?php
-            include_once 'src/execute_query.php';
+            include_once 'src/php/execute_query.php';
             $query = "Select B.name, B.cost, V.name From Board_Games B, Vendor V Where B.vendor_id = V.id ORDER BY B.cost LIMIT 1;";
             execute_and_print_query($query, $conn);
             ?>
