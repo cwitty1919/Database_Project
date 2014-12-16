@@ -1,6 +1,4 @@
-
-
-   Normalized Schema (4NF):
+Original Schema:
 
 Datbase Content:
   - Board games database
@@ -8,12 +6,9 @@ Datbase Content:
      ~ Board Game Name
      ~ Board Game Cost
      ~ Board Game Quantity
+     ~ Board Game Color
      ~ Board Game Vendor
      ~ Board Game Number of Players
-
-   -Board game color 
-      ~Board Game ID
-      ~Board Game Color
      
   -Events
     ~Event ID
@@ -27,25 +22,19 @@ Datbase Content:
     ~Vendor ID
     ~Vendor Name
     ~Vendor Address
+    ~Vendor Zip Code
     ~Vendor Status
     ~Vendor Phone Number
     ~Vendor Email
-
-    -Vendor Address
-      ~Vendor Address
-      ~Vendor Zipcode
     
   -Purchases From Vendor
     ~Product Serial Number
     ~Product Name
     ~Product Type
+    ~Product Color
     ~Store Location
     ~Vendor Name
     ~Date
-
-  -Purchases from Vendor based on color
-    ~Product Serial Number
-    ~Product Color
   
   -Store Record
       ~Serial Number
@@ -68,42 +57,27 @@ Datbase Content:
     ~ Player ID
     ~ Player Name
     ~ Player Address
+    ~ Player Zipcode
     ~ Player Age
     ~ Player Gender
     ~ Player Wins
     ~ Player Losses
 
-  -Player Address
-    ~Player Address
-    ~Player Zipcode
-
   - Judge Info
     ~ Judge ID
     ~ Judge Name
     ~ Judge Address
+    ~ Judge Zipcode
     ~ Judge Age
     ~ Judge Num_Games_Judged
-
-  Judge Address
-    ~Judge Address
-    ~Judge Zipcode
 
   - Store
     ~Store ID
     ~Store Name
     ~Store Address
-
-    -Store City 
-      ~Store Address
-      ~Store City
-
-    -Store State
-      ~Store City
-      ~Store State
-
-    -Store Zipcode
-      ~Store Address
-      ~Store Zipcode
+    ~Store City
+    ~Store State
+    ~Store Zipcode 
 
   - Tournaments
     ~ Tournament ID
@@ -115,11 +89,3 @@ Datbase Content:
     ~ Tournament 1st place Player ID
     ~ Tournament 2nd place Player ID
     ~ Tournament 3rd place Player ID
- 
-
-Web Interface: 
-  Link for each query
-  Display basic information (3 most popular board games)
-  Display info for each displayed board game
-  Display latest tournament
-  Display latest tournament winners
