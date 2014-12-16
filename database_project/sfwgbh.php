@@ -46,7 +46,7 @@
           <h1 id="section1">Database Project</h1>
           <h3>SELECT FROM WHERE GROUP BY HAVING</h3>
             <?php
-            include_once 'src/execute_query.php';
+            include_once 'src/php/execute_query.php';
             $query = "SELECT V.name, B.name, B.number_of_players FROM Vendor V, Board_Games B WHERE B.vendor_id = V.id GROUP BY B.number_of_players HAVING number_of_players > 4;";
             execute_and_print_query($query, $conn);
             ?>

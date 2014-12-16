@@ -46,7 +46,7 @@
           <h1 id="section1">Database Project</h1>
          <h3>Start Transaction then Rollback</h3>
             <?php
-            include_once 'src/execute_query.php';
+            include_once 'src/php/execute_query.php';
             $query = "START TRANSACTION;";
             execute_query($query, $conn);
             $query = "INSERT INTO Sales_Record(board_game_id, store_id, date, purchaser_name) VALUES (1, 1, '2016-11-11', 'James Baxter');";

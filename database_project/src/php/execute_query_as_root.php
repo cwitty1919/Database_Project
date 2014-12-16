@@ -1,5 +1,5 @@
 <?php
-include_once 'src/dblogin_root.php';
+include_once 'src/php/dblogin_root.php';
 
 function execute_query($to_execute, $conn) {
    $query="USE project";
