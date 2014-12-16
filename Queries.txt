@@ -2,7 +2,7 @@ Queries
 
 //Create Tables
 
-/Vendors 
+/Vendors
 
 CREATE TABLE Vendor( id TINYINT NOT NULL AUTO_INCREMENT, name CHAR(30), address CHAR(50), status CHAR(6), phone_number CHAR(12), email CHAR(30), PRIMARY KEY (id));
 
@@ -12,7 +12,7 @@ INSERT INTO Vendor (name, address, status, phone_number, email) VALUES ('Rio Gra
 
 CREATE TABLE Vendor_Zip_Code( vendor_id TINYINT NOT NULL, zipcode CHAR(5), PRIMARY KEY (vendor_id), FOREIGN KEY (vendor_id) REFERENCES Vendor (id));
 
-INSERT INTO Vendor_Zip_Code(vendor_id, zipcode) VALUES (1, 87043), (2, 78760), (3, 60076), (4, 10026), (5, 06051), (6, 97201); 
+INSERT INTO Vendor_Zip_Code(vendor_id, zipcode) VALUES (1, 87043), (2, 78760), (3, 60076), (4, 10026), (5, 06051), (6, 97201);
 
 /Purchaser Accounts
 
@@ -24,7 +24,7 @@ INSERT INTO Accounts (username, password, name, address) VALUES ('Angus5979','x9
 
 CREATE TABLE Account_Zipcode( account_id TINYINT NOT NULL, zipcode CHAR(5));
 
-INSERT INTO Account_Zipcode(account_id, zipcode) VALUES (1, 80067), (2, 92660), (3, 83701), (4, 10026), (5, 33626); 
+INSERT INTO Account_Zipcode(account_id, zipcode) VALUES (1, 80067), (2, 92660), (3, 83701), (4, 10026), (5, 33626);
 
 /Players
 
@@ -120,15 +120,15 @@ Select B.name, B.cost, V.name From Board_Games B, Vendor V Where B.vendor_id = V
 
 /Implied Join
 
-SELECT V.name, V.address, Z.zipcode FROM Vendor V, Vendor_Zip_Code Z WHERE Z.vendor_id = V.id; 
+SELECT V.name, V.address, Z.zipcode FROM Vendor V, Vendor_Zip_Code Z WHERE Z.vendor_id = V.id;
 
 /Group By Clause
 
-SELECT V.name, B.name, B.number_of_players FROM Vendor V, Board_games B WHERE B.vendor_id = V.id GROUP BY B.number_of_players; 
+SELECT V.name, B.name, B.number_of_players FROM Vendor V, Board_Games B WHERE B.vendor_id = V.id GROUP BY B.number_of_players;
 
 /Group By Having Clause
 
-SELECT V.name, B.name, B.number_of_players FROM Vendor V, Board_games B WHERE B.vendor_id = V.id GROUP BY B.number_of_players HAVING number_of_players > 4; 
+SELECT V.name, B.name, B.number_of_players FROM Vendor V, Board_Games B WHERE B.vendor_id = V.id GROUP BY B.number_of_players HAVING number_of_players > 4;
 
 //SELECT WHERE NOT IN: Find all customers who do not have accounts with the store
 
