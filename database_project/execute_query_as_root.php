@@ -1,14 +1,7 @@
 <?php
-include_once 'dblogin.php';
+include_once 'dblogin_root.php';
 
-function print_query($query) {
-   while ($row = $query->fetch_assoc()) {
-      print_r($row);
-      echo "<br>";
-   }
-}
-
-function execute_and_print_query($to_execute, $conn) {
+function execute_query($to_execute, $conn) {
    $query="USE project";
 
    $result = $conn->query($query);
@@ -25,8 +18,5 @@ function execute_and_print_query($to_execute, $conn) {
    if ($result ==- FALSE)
       die("Error executing the sql query");
 
-   echo "Result: <br><br>";
-   print_query($result);
-   echo "<br>";
 };
 ?>
