@@ -46,7 +46,7 @@
           <h1 id="section1">Database Project</h1>
           <h3>SET</h3>
             <?php
-            include_once 'src/php/execute_query.php';
+            include_once 'src/execute_query.php';
             $query = "SET @budget = 30.00;";
             execute_query($query, $conn);
             $query = "SELECT B.name FROM Board_Games B WHERE B.number_of_players > 4 AND B.cost < @budget;";

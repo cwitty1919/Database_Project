@@ -46,7 +46,7 @@
           <h1 id="section1">Database Project</h1>
           <h3>SELECT FROM WHERE</h3>
             <?php
-            include_once 'src/php/execute_query.php';
+            include_once 'src/execute_query.php';
             $query = "SELECT * FROM Board_Games WHERE number_of_players >= 6;";
             execute_and_print_query($query, $conn);
             ?>

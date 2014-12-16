@@ -46,7 +46,7 @@
           <h1 id="section1">Database Project</h1>
           <h3>SELECT FROM WHERE ORDER BY</h3>
             <?php
-            include_once 'src/php/execute_query.php';
+            include_once 'src/execute_query.php';
             $query = "SELECT T.name as Tournament, S.name as Store, T.number_of_participants  FROM Tournament T, Store S WHERE T.store_id = S.id ORDER BY prize_amount;";
             execute_and_print_query($query, $conn);
             ?>

@@ -46,7 +46,7 @@
           <h1 id="section1">Database Project</h1>
           <h3>SELECT FROM WHERE with implied join</h3>
             <?php
-            include_once 'src/php/execute_query.php';
+            include_once 'src/execute_query.php';
             $query = "SELECT V.name, V.address, Z.zipcode FROM Vendor V, Vendor_Zip_Code Z WHERE Z.vendor_id = V.id;";
             execute_and_print_query($query, $conn);
             ?>

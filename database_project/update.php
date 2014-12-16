@@ -46,7 +46,7 @@
           <h1 id="section1">Database Project</h1>
           <h3>UPDATE</h3>
             <?php
-            include_once 'src/php/execute_query.php';
+            include_once 'src/execute_query.php';
             $query = "SELECT * FROM Board_Games;";
             execute_and_print_query($query, $conn);
             $query = "UPDATE Board_Games B SET cost=cost*0.90 WHERE B.id NOT IN (SELECT S.board_game_id FROM Sales_Record S WHERE S.date < 2010 );";

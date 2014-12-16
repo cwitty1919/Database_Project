@@ -46,7 +46,7 @@
           <h1 id="section1">Database Project</h1>
            <h3>Create User</h3>
             <?php
-            include_once 'src/php/execute_query_as_root.php';
+            include_once 'src/execute_query_as_root.php';
             $query = "CREATE USER 'christopher'@'localhost' IDENTIFIED BY 'password';";
             execute_query($query, $conn);
             $query = "GRANT ALL ON project.* TO 'christopher'@'localhost';";

@@ -46,7 +46,7 @@
           <h1 id="section1">Database Project</h1>
          <h3>Drop User</h3>
             <?php
-            include_once 'src/php/execute_query_as_root.php';
+            include_once 'src/execute_query_as_root.php';
             $query = "DROP USER 'christopher'@'localhost';";
             execute_query($query, $conn);
             ?>

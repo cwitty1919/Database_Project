@@ -46,7 +46,7 @@
           <h1 id="section1">Database Project</h1>
           <h3>SELECT FROM WHERE NOT IN</h3>
             <?php
-            include_once 'src/php/execute_query.php';
+            include_once 'src/execute_query.php';
             $query = "SELECT S.purchaser_name FROM Sales_Record S WHERE S.purchaser_name NOT IN (SELECT Accounts.name FROM Accounts);";
             execute_and_print_query($query, $conn);
             ?>
