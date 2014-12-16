@@ -1,10 +1,16 @@
 <?php
 
-include 'src/php/dblogin.php';
-include 'src/php/execute_query.php';
+include_once 'src/php/dblogin.php';
+include_once 'src/php/execute_query.php';
 
 $dropdb = "DROP DATABASE IF EXISTS $dbname;";
-execute_query($dropdb, $conn);
+
+echo "Executing query: $dropdb <br>";
+
+if ($conn->query($dropdb) === FALSE) {
+   $deathstring="Error: failed to drop the database, $conn->error <br>";
+   die($deathstring);
+}
 
 
 $createdb = "CREATE DATABASE $dbname;";
@@ -22,7 +28,7 @@ $sql = "USE $dbname;";
 execute_query($sql, $conn);
 //Create Tables
 
-//Vendors 
+//Vendors
 
 $sql = "CREATE TABLE Vendor( id TINYINT NOT NULL AUTO_INCREMENT, name CHAR(30), address CHAR(50), status CHAR(6), phone_number CHAR(12), email CHAR(30), PRIMARY KEY (id));";
 
