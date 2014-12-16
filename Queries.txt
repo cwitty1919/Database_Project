@@ -130,6 +130,20 @@ SELECT V.name, B.name, B.number_of_players FROM Vendor V, Board_games B WHERE B.
 
 SELECT V.name, B.name, B.number_of_players FROM Vendor V, Board_games B WHERE B.vendor_id = V.id GROUP BY B.number_of_players HAVING number_of_players > 4; 
 
+//A SELECT FROM WHERE with two implied joins, a MAX function, an AVG function, and at least two levels of parentheses embedding in the where clause (i.e., a very non-trivial where clause)
+
+SELECT MAX(B.cost) as MAX_PRICE, AVG(B.cost) as AVG_PRICE FROM Board_Games B WHERE B.id IN (SELECT S.board_game_id FROM Sales_Record S WHERE S.date > 2010 AND S.board_game_id NOT IN (SELECT B.id FROM Board_Games B, Vendor V WHERE B.vendor_id = V.id AND (V.status = 'CLOSED' OR B.cost > 40.00))); 
+
+/Set
+
+SET @budget = 30.00; 
+
+SELECT B.name FROM Board_Games B WHERE B.number_of_players > 4 AND B.cost < @budget;
+
+/Update
+
+UPDATE Board_Games B SET cost=cost*0.90 WHERE B.id NOT IN (SELECT S.board_game_id FROM Sales_Record S WHERE S.date < 2010 );
+
 //SELECT WHERE NOT IN: Find all customers who do not have accounts with the store
 
 SELECT S.purchaser_name FROM Sales_Record S WHERE S.purchaser_name NOT IN (SELECT Accounts.name FROM Accounts);
@@ -144,6 +158,16 @@ GRANT ALL ON project.* TO 'christopher'@'localhost';
 //Drop User
 
 DROP USER 'christopher'@'localhost';
+
+//Start Transaction and Rollback
+
+START TRANSACTION;
+INSERT INTO Sales_Record(board_game_id, store_id, date, purchaser_name) VALUES (1, 1, '2016-11-11', 'James Baxter');
+ROLLBACK;
+SELECT * FROM Sales_Record; //Prove that it worked
+
+
+
 
 
 
