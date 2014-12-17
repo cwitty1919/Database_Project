@@ -53,12 +53,13 @@
             execute_query($query, $conn);
             echo "Showing transaction before rollback: <br>";
             $query = "SELECT * FROM Sales_Record;";
-            execute_and_print_query($query, $conn);
+            $table = "Sales_Record";
+            execute_and_print_query_with_tablename($query, $conn, $table);
             $query = "ROLLBACK;";
             execute_query($query, $conn);
             echo "Showing transaction after rollback: <br>";
             $query = "SELECT * FROM Sales_Record;";
-            execute_and_print_query($query, $conn);
+            execute_and_print_query_with_tablename($query, $conn, $table);
             ?>
         </div><!-- /.col-xs-12 main -->
     </div><!--/.row-->

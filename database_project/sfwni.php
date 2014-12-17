@@ -48,7 +48,8 @@
             <?php
             include_once 'src/php/execute_query.php';
             $query = "SELECT S.purchaser_name FROM Sales_Record S WHERE S.purchaser_name NOT IN (SELECT Accounts.name FROM Accounts);";
-            execute_and_print_query($query, $conn);
+            $table = "Sales_Record";
+            execute_and_print_query_with_tablename($query, $conn, $table);
             ?>
         </div><!-- /.col-xs-12 main -->
     </div><!--/.row-->

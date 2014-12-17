@@ -48,4 +48,27 @@ function execute_and_print_query($to_execute, $conn) {
    print_query($result);
    echo "<br>";
 }
+
+function execute_and_print_query_with_tablename($to_execute, $conn, $tablename) {
+   $query="USE project";
+
+   $result = $conn->query($query);
+
+   if ($result === FALSE)
+      die("Error: failed to connect to the database<br>");
+
+   $query="$to_execute";
+
+   echo "Executing query: '$query' <br><br>";
+
+   $result = $conn->query($query);
+
+   if ($result ==- FALSE)
+      die("Error executing the sql query");
+
+   echo "Result: <br><br>";
+   echo "Table Name: $tablename <br>";
+   print_query($result);
+   echo "<br>";
+}
 ?>

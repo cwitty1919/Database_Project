@@ -48,7 +48,8 @@
             <?php
             include_once 'src/php/execute_query.php';
             $query = "SELECT * FROM Board_Games WHERE number_of_players >= 6;";
-            execute_and_print_query($query, $conn);
+            $table = "Board_Games";
+            execute_and_print_query_with_tablename($query, $conn, $table);
             ?>
         </div><!-- /.col-xs-12 main -->
     </div><!--/.row-->

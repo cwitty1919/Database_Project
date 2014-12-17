@@ -50,7 +50,8 @@
             $query = "SET @budget = 30.00;";
             execute_query($query, $conn);
             $query = "SELECT B.name FROM Board_Games B WHERE B.number_of_players > 4 AND B.cost < @budget;";
-            execute_and_print_query($query, $conn);
+            $table = "Board_Games";
+            execute_and_print_query_with_tablename($query, $conn, $table);
             ?>
         </div><!-- /.col-xs-12 main -->
     </div><!--/.row-->
